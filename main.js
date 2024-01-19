@@ -32,15 +32,16 @@ const createModelSelectOptions = (data) => {
     console.log(data);
 
     let dataFotmat = Array(data.data);
-    console.log(dataFotmat);
+    console.log('dataFotmat[0]', dataFotmat[0]);
     selectElementModel.innerHTML = '';
 
     // Проверяем, что статус ответа 'success' и что в 'data' есть массив
     if (data) {
-        dataFotmat.forEach(model => {
+        dataFotmat[0].forEach(model => {
             let option = document.createElement('option');
             option.value = model.value; // Используем 'value' из объекта модели
             option.text = model.text; // Используем 'text' из объекта модели
+            console.log('OPTIONS', option);
 
             selectElementModel.appendChild(option);
         });
